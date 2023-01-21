@@ -71,10 +71,3 @@ function! s:Bclose(bang, buffer)
 endfunction
 command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose('<bang>', '<args>')
 
-if exists ("g:bclose_no_plugin_maps") &&  g:bclose_no_plugin_maps
-    "do nothing
-elseif exists ("g:no_plugin_maps") &&  g:no_plugin_maps
-    "do nothing
-else
-     nnoremap <silent> <Leader>bd :Bclose<CR>
-endif
